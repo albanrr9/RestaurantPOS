@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -15,12 +16,15 @@ namespace RestaurantPOS
     public partial class MenuManagmentControl : UserControl
     {
         public event EventHandler BackButtonClicked; 
-        string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
         public MenuManagmentControl()
         {
             InitializeComponent();
             LoadData();
             LoadCategories();
+        }
+        public string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -29,7 +33,7 @@ namespace RestaurantPOS
         public void LoadData()
         {
             string query = "SELECT * FROM Products";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -43,7 +47,7 @@ namespace RestaurantPOS
         {
             List<Category> categories = new List<Category>();
             string query = "SELECT CategoryID, CategoryName FROM Categories";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
@@ -69,7 +73,7 @@ namespace RestaurantPOS
         public bool IsProductInDatabase(string productName)
         {
             string query = "SELECT COUNT(*) FROM Products WHERE ProductName = @ProductName";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@ProductName", productName);
@@ -99,7 +103,7 @@ namespace RestaurantPOS
                 return;
             }
             string insertQuery = "INSERT INTO Products (ProductName, Price, CategoryID) VALUES (@ProductName, @Price, @CategoryID)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(insertQuery, connection))
             {
                 command.Parameters.AddWithValue("@ProductName", productName);
@@ -134,7 +138,7 @@ namespace RestaurantPOS
                 return;
             }
             string updateQuery = "UPDATE Products SET Price = @Price, CategoryID = @CategoryID WHERE ProductName = @ProductName";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(updateQuery, connection))
             {
                 command.Parameters.AddWithValue("@Price", price);
@@ -177,7 +181,7 @@ namespace RestaurantPOS
                 return;
             }
             string deleteQuery = "DELETE FROM Products WHERE ProductName = @Product";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(deleteQuery, connection))
             {
                 command.Parameters.AddWithValue("@Product", product);

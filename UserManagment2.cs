@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
@@ -9,13 +10,16 @@ namespace RestaurantPOS
 {
     public partial class UserManagment2 : UserControl
     {
-        public event EventHandler BackButtonClicked; 
-        string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
+        public event EventHandler BackButtonClicked;
         public UserManagment2()
         {
             InitializeComponent();
             CenterPanel();
             LoadData();
+        }
+        public string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -24,7 +28,7 @@ namespace RestaurantPOS
         private void LoadData()
         {
             string query = "SELECT * FROM Users";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
@@ -69,7 +73,7 @@ namespace RestaurantPOS
             }
             string hashedPassword = HashPassword(password);
             string insertQuery = "INSERT INTO Users (Username, PasswordHash, AdminRights) VALUES (@Username, @Password, @AdminRights)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(insertQuery, connection))
             {
                 command.Parameters.AddWithValue("@Username", username);
@@ -106,7 +110,7 @@ namespace RestaurantPOS
             }
             string hashedPassword = HashPassword(newPassword);
             string updateQuery = "UPDATE Users SET PasswordHash = @Password, AdminRights = @AdminRights WHERE Username = @Username";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(updateQuery, connection))
             {
                 command.Parameters.AddWithValue("@Password", hashedPassword);
@@ -140,7 +144,7 @@ namespace RestaurantPOS
                 return;
             }
             string deleteQuery = "DELETE FROM Users WHERE Username = @Username";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(deleteQuery, connection))
             {
                 command.Parameters.AddWithValue("@Username", username);
@@ -162,7 +166,7 @@ namespace RestaurantPOS
         {
             string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Username", username);

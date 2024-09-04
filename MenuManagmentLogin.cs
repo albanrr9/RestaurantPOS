@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -19,6 +20,10 @@ namespace RestaurantPOS
         {
             InitializeComponent();
             CenterPanel();
+        }
+        public string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -49,8 +54,7 @@ namespace RestaurantPOS
         }
         public string AuthenticateAdminUser(string username, string password)
         {
-            string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 string query = "SELECT PasswordHash, AdminRights FROM Users WHERE Username = @username";
                 SqlCommand command = new SqlCommand(query, connection);

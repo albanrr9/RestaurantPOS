@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -12,17 +13,20 @@ namespace RestaurantPOS
         private readonly int tableNumber;
         public string userName;
         public event EventHandler BackButtonClicked2;
-        string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
         public OrderForm(int tableNumber, string username)
         {
             InitializeComponent();
             this.tableNumber = tableNumber;
             this.userName = username;
         }
+        public string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        }
         private void LoadProducts(string query)
         {
             flowLayoutPanel1.Controls.Clear();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();

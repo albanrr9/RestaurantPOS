@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace RestaurantPOS
 {
@@ -13,6 +14,10 @@ namespace RestaurantPOS
         {
             InitializeComponent();
             CenterPanel();
+        }
+        public string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
         private void UserControl1_Load(object sender, EventArgs e)
         {
@@ -69,8 +74,7 @@ namespace RestaurantPOS
         }
         public bool AuthenticateUser(string username, string password)
         {
-            string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 string query = "SELECT PasswordHash FROM Users WHERE Username = @username";
                 SqlCommand command = new SqlCommand(query, connection);
