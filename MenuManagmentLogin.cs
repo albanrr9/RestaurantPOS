@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RestaurantPOS
 {
-    public partial class UserManagment : UserControl
+    public partial class MenuManagmentLogin : UserControl
     {
-        public event EventHandler BackButtonClicked;
-        public UserManagment()
+        public EventHandler BackButtonClicked;
+        public MenuManagmentLogin()
         {
             InitializeComponent();
             CenterPanel();
@@ -25,14 +31,6 @@ namespace RestaurantPOS
             groupBox1.Location = new System.Drawing.Point(x, y);
             txtUsername.Focus();
         }
-        private void UserManagment_Load(object sender, EventArgs e)
-        {
-            CenterPanel();
-        }
-        private void UserManagment_Resize(object sender, EventArgs e)
-        {
-            CenterPanel();
-        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
@@ -40,10 +38,14 @@ namespace RestaurantPOS
             string result = AuthenticateAdminUser(username, password);
             if (result == "Login successful")
             {
-                UserManagment2 userManagment2 = new UserManagment2();
-                userManagment2.BackButtonClicked += UserManagment2_BackButtonClicked;
-                LoadUserControl(userManagment2);
+                MenuManagmentControl menuManagment = new MenuManagmentControl();
+                menuManagment.BackButtonClicked += MenuManagmentControl_BackButtonClicked;
+                LoadUserControl(menuManagment);
             }
+        }
+        private void MenuManagmentControl_BackButtonClicked(object sender, EventArgs e)
+        {
+            this.panel1.Dock = DockStyle.None;
         }
         public string AuthenticateAdminUser(string username, string password)
         {
@@ -107,9 +109,13 @@ namespace RestaurantPOS
             this.panel1.Dock = DockStyle.Fill;
             userControl.Dock = DockStyle.Fill;
         }
-        private void UserManagment2_BackButtonClicked(object sender, EventArgs e)
+        private void MenuManagmentLogin_Load(object sender, EventArgs e)
         {
-            this.panel1.Dock = DockStyle.None;
+            CenterPanel();
+        }
+        private void MenuManagmentLogin_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
         }
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {

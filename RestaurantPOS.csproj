@@ -58,6 +58,12 @@
     <Compile Include="MenuManagmentControl.Designer.cs">
       <DependentUpon>MenuManagmentControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuManagmentLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuManagmentLogin.Designer.cs">
+      <DependentUpon>MenuManagmentLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuManagmentControl.resx">
       <DependentUpon>MenuManagmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuManagmentLogin.resx">
+      <DependentUpon>MenuManagmentLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>

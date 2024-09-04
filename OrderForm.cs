@@ -12,16 +12,15 @@ namespace RestaurantPOS
         private readonly int tableNumber;
         public string userName;
         public event EventHandler BackButtonClicked2;
+        string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
         public OrderForm(int tableNumber, string username)
         {
             InitializeComponent();
             this.tableNumber = tableNumber;
             this.userName = username;
-            this.Text = "Order - Table " + tableNumber;
         }
         private void LoadProducts(string query)
         {
-            string connectionString = "Data Source=DESKTOP-D87KK1G; Initial Catalog=RestaurantPOS; Integrated Security=True;";
             flowLayoutPanel1.Controls.Clear();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -33,6 +32,7 @@ namespace RestaurantPOS
                     int productId = reader.GetInt32(0);
                     string productName = reader.GetString(1);
                     decimal productPrice = reader.GetDecimal(2);
+                    Console.WriteLine($"{productName} {productPrice}");
                     Button productButton = new Button
                     {
                         Text = $"{productName}\n{productPrice:F2}€",
@@ -57,7 +57,7 @@ namespace RestaurantPOS
             {
                 int productId = (int)clickedButton.Tag;
                 string productName = clickedButton.Text.Split('\n')[0];
-                decimal productPrice = decimal.Parse(clickedButton.Text.Split('\n')[1].TrimStart('$'));
+                decimal productPrice = decimal.Parse(clickedButton.Text.Split('\n')[1].TrimEnd('€'));
                 ListViewItem existingItem = null;
                 foreach (ListViewItem item in listViewOrder.Items)
                 {
@@ -67,7 +67,6 @@ namespace RestaurantPOS
                         break;
                     }
                 }
-
                 if (existingItem != null)
                 {
                     int currentQuantity = int.Parse(existingItem.SubItems[1].Text);
@@ -229,6 +228,7 @@ namespace RestaurantPOS
             g.DrawString(serialNumber, printFont, Brushes.Black, CenterText(serialNumber, printFont, e), y);
             y += lineHeight;
             g.DrawString(uniqueCode, printFont, Brushes.Black, CenterText(uniqueCode, printFont, e), y);
+            y += lineHeight * 2;
             string fiscalText = "KUPON FISKAL NR. XXXX";
             string rksMef = "RKS MEF";
             g.DrawString(fiscalText, boldFont, Brushes.Black, CenterText(fiscalText, boldFont, e), y);

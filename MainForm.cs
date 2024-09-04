@@ -43,11 +43,8 @@ namespace RestaurantPOS
         }
         private void CenterPanel()
         {
-            // Calculate the new position
             int x = (this.ClientSize.Width - buttons.Width) / 2;
             int y = (this.ClientSize.Height - buttons.Height) / 2;
-
-            // Set the new position
             buttons.Location = new System.Drawing.Point(x, y);
         }
         private void btnOrders_Click(object sender, EventArgs e)
@@ -70,12 +67,11 @@ namespace RestaurantPOS
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-
         private void btnMenuManagment_Click(object sender, EventArgs e)
         {
-            MenuManagmentControl menuManagment = new MenuManagmentControl();
-            menuManagment.BackButtonClicked += UserControl_BackButtonClicked;
-            LoadUserControl(menuManagment);
+            MenuManagmentLogin menuManagmentlogin = new MenuManagmentLogin();
+            menuManagmentlogin.BackButtonClicked += UserControl_BackButtonClicked;
+            LoadUserControl(menuManagmentlogin);
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
