@@ -120,6 +120,7 @@
             this.btnMenuManagment.Text = "Menu Managment";
             this.btnMenuManagment.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnMenuManagment.UseVisualStyleBackColor = false;
+            this.btnMenuManagment.Click += new System.EventHandler(this.btnMenuManagment_Click);
             // 
             // btnOrders
             // 

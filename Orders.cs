@@ -17,12 +17,15 @@ namespace RestaurantPOS
             CenterPanel();
             TextBox textBox2 = new TextBox();
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
+        private void UserControl1_Load(object sender, EventArgs e)
         {
-            BackButtonClicked?.Invoke(this, EventArgs.Empty);
+            CenterPanel();
         }
 
+        private void UserControl1_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
         private void CenterPanel()
         {
             // Calculate the new position
@@ -33,29 +36,9 @@ namespace RestaurantPOS
             groupBox1.Location = new System.Drawing.Point(x, y);
             txtUsername.Focus();
         }
-
-        private static string HashPassword(string password)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
-
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-            CenterPanel();
-        }
-
-        private void UserControl1_Resize(object sender, EventArgs e)
-        {
-            CenterPanel();
+            BackButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -67,7 +50,7 @@ namespace RestaurantPOS
             if (result)
             {
                 OrdersTablePage ordersTablePage = new OrdersTablePage(username);
-                ordersTablePage.BackButtonClicked += OrdersTablePage_BackButtonClicked;
+                ordersTablePage.BackButtonClicked1 += OrdersTablePage_BackButtonClicked;
                 LoadUserControl(ordersTablePage);
             }
         }
@@ -76,7 +59,23 @@ namespace RestaurantPOS
         {
             this.panel1.Dock = DockStyle.None;
         }
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Prevent the default "ding" sound
+                txtPassword.Focus();   // Move focus to the PasswordTextBox
+            }
+        }
 
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Prevent the default "ding" sound
+                btnLogin.PerformClick(); // Trigger the LoginButton click event
+            }
+        }
         public bool AuthenticateUser(string username, string password)
         {
             // Replace with your actual database connection string
@@ -108,30 +107,26 @@ namespace RestaurantPOS
             }
         }
 
+        private static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         private void LoadUserControl(UserControl userControl)
-        {
-            this.panel1.Controls.Clear();
-            this.panel1.Controls.Add(userControl);
-            this.panel1.Dock = DockStyle.Fill;
-            userControl.Dock = DockStyle.Fill;
-        }
+{
+    this.panel1.Controls.Clear();
+    this.panel1.Controls.Add(userControl);
+    this.panel1.Dock = DockStyle.Fill;
+    userControl.Dock = DockStyle.Fill;
+}
 
-        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // Prevent the default "ding" sound
-                txtPassword.Focus();   // Move focus to the PasswordTextBox
-            }
-        }
-
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // Prevent the default "ding" sound
-                btnLogin.PerformClick(); // Trigger the LoginButton click event
-            }
-        }
     }
 }

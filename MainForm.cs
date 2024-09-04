@@ -70,5 +70,16 @@ namespace RestaurantPOS
                 this.WindowState = FormWindowState.Maximized;
             }
         }
+
+        private void btnMenuManagment_Click(object sender, EventArgs e)
+        {
+            MenuManagmentControl menuManagment = new MenuManagmentControl();
+            menuManagment.BackButtonClicked += UserControl_BackButtonClicked;
+            LoadUserControl(menuManagment);
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
 }

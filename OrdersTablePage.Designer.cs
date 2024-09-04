@@ -80,6 +80,7 @@
             this.table2 = new System.Windows.Forms.Button();
             this.table1 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,9 +135,9 @@
             this.panel1.Controls.Add(this.table3);
             this.panel1.Controls.Add(this.table2);
             this.panel1.Controls.Add(this.table1);
-            this.panel1.Location = new System.Drawing.Point(178, 71);
+            this.panel1.Location = new System.Drawing.Point(31, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 640);
+            this.panel1.Size = new System.Drawing.Size(654, 637);
             this.panel1.TabIndex = 0;
             // 
             // table49
@@ -146,7 +147,7 @@
             this.table49.FlatAppearance.BorderSize = 0;
             this.table49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table49.ForeColor = System.Drawing.Color.Transparent;
-            this.table49.Location = new System.Drawing.Point(471, 549);
+            this.table49.Location = new System.Drawing.Point(579, 549);
             this.table49.Name = "table49";
             this.table49.Size = new System.Drawing.Size(72, 85);
             this.table49.TabIndex = 49;
@@ -161,7 +162,7 @@
             this.table48.FlatAppearance.BorderSize = 0;
             this.table48.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table48.ForeColor = System.Drawing.Color.Transparent;
-            this.table48.Location = new System.Drawing.Point(393, 549);
+            this.table48.Location = new System.Drawing.Point(483, 549);
             this.table48.Name = "table48";
             this.table48.Size = new System.Drawing.Size(72, 85);
             this.table48.TabIndex = 48;
@@ -176,7 +177,7 @@
             this.table47.FlatAppearance.BorderSize = 0;
             this.table47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table47.ForeColor = System.Drawing.Color.Transparent;
-            this.table47.Location = new System.Drawing.Point(315, 549);
+            this.table47.Location = new System.Drawing.Point(387, 549);
             this.table47.Name = "table47";
             this.table47.Size = new System.Drawing.Size(72, 85);
             this.table47.TabIndex = 47;
@@ -191,7 +192,7 @@
             this.table46.FlatAppearance.BorderSize = 0;
             this.table46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table46.ForeColor = System.Drawing.Color.Transparent;
-            this.table46.Location = new System.Drawing.Point(237, 549);
+            this.table46.Location = new System.Drawing.Point(291, 549);
             this.table46.Name = "table46";
             this.table46.Size = new System.Drawing.Size(72, 85);
             this.table46.TabIndex = 46;
@@ -206,7 +207,7 @@
             this.table45.FlatAppearance.BorderSize = 0;
             this.table45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table45.ForeColor = System.Drawing.Color.Transparent;
-            this.table45.Location = new System.Drawing.Point(159, 549);
+            this.table45.Location = new System.Drawing.Point(195, 549);
             this.table45.Name = "table45";
             this.table45.Size = new System.Drawing.Size(72, 85);
             this.table45.TabIndex = 45;
@@ -221,7 +222,7 @@
             this.table44.FlatAppearance.BorderSize = 0;
             this.table44.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table44.ForeColor = System.Drawing.Color.Transparent;
-            this.table44.Location = new System.Drawing.Point(82, 549);
+            this.table44.Location = new System.Drawing.Point(100, 549);
             this.table44.Name = "table44";
             this.table44.Size = new System.Drawing.Size(72, 85);
             this.table44.TabIndex = 44;
@@ -251,7 +252,7 @@
             this.table35.FlatAppearance.BorderSize = 0;
             this.table35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table35.ForeColor = System.Drawing.Color.Transparent;
-            this.table35.Location = new System.Drawing.Point(471, 367);
+            this.table35.Location = new System.Drawing.Point(579, 367);
             this.table35.Name = "table35";
             this.table35.Size = new System.Drawing.Size(72, 85);
             this.table35.TabIndex = 42;
@@ -281,7 +282,7 @@
             this.table37.FlatAppearance.BorderSize = 0;
             this.table37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table37.ForeColor = System.Drawing.Color.Transparent;
-            this.table37.Location = new System.Drawing.Point(81, 458);
+            this.table37.Location = new System.Drawing.Point(99, 458);
             this.table37.Name = "table37";
             this.table37.Size = new System.Drawing.Size(72, 85);
             this.table37.TabIndex = 40;
@@ -296,7 +297,7 @@
             this.table38.FlatAppearance.BorderSize = 0;
             this.table38.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table38.ForeColor = System.Drawing.Color.Transparent;
-            this.table38.Location = new System.Drawing.Point(159, 458);
+            this.table38.Location = new System.Drawing.Point(195, 458);
             this.table38.Name = "table38";
             this.table38.Size = new System.Drawing.Size(72, 85);
             this.table38.TabIndex = 39;
@@ -311,7 +312,7 @@
             this.table39.FlatAppearance.BorderSize = 0;
             this.table39.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table39.ForeColor = System.Drawing.Color.Transparent;
-            this.table39.Location = new System.Drawing.Point(237, 458);
+            this.table39.Location = new System.Drawing.Point(291, 458);
             this.table39.Name = "table39";
             this.table39.Size = new System.Drawing.Size(72, 85);
             this.table39.TabIndex = 38;
@@ -326,7 +327,7 @@
             this.table40.FlatAppearance.BorderSize = 0;
             this.table40.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table40.ForeColor = System.Drawing.Color.Transparent;
-            this.table40.Location = new System.Drawing.Point(315, 458);
+            this.table40.Location = new System.Drawing.Point(387, 458);
             this.table40.Name = "table40";
             this.table40.Size = new System.Drawing.Size(72, 85);
             this.table40.TabIndex = 37;
@@ -341,7 +342,7 @@
             this.table41.FlatAppearance.BorderSize = 0;
             this.table41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table41.ForeColor = System.Drawing.Color.Transparent;
-            this.table41.Location = new System.Drawing.Point(393, 458);
+            this.table41.Location = new System.Drawing.Point(483, 458);
             this.table41.Name = "table41";
             this.table41.Size = new System.Drawing.Size(72, 85);
             this.table41.TabIndex = 36;
@@ -356,7 +357,7 @@
             this.table28.FlatAppearance.BorderSize = 0;
             this.table28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table28.ForeColor = System.Drawing.Color.Transparent;
-            this.table28.Location = new System.Drawing.Point(471, 276);
+            this.table28.Location = new System.Drawing.Point(579, 276);
             this.table28.Name = "table28";
             this.table28.Size = new System.Drawing.Size(72, 85);
             this.table28.TabIndex = 35;
@@ -386,7 +387,7 @@
             this.table30.FlatAppearance.BorderSize = 0;
             this.table30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table30.ForeColor = System.Drawing.Color.Transparent;
-            this.table30.Location = new System.Drawing.Point(81, 367);
+            this.table30.Location = new System.Drawing.Point(99, 367);
             this.table30.Name = "table30";
             this.table30.Size = new System.Drawing.Size(72, 85);
             this.table30.TabIndex = 33;
@@ -401,7 +402,7 @@
             this.table31.FlatAppearance.BorderSize = 0;
             this.table31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table31.ForeColor = System.Drawing.Color.Transparent;
-            this.table31.Location = new System.Drawing.Point(159, 367);
+            this.table31.Location = new System.Drawing.Point(195, 367);
             this.table31.Name = "table31";
             this.table31.Size = new System.Drawing.Size(72, 85);
             this.table31.TabIndex = 32;
@@ -416,7 +417,7 @@
             this.table32.FlatAppearance.BorderSize = 0;
             this.table32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table32.ForeColor = System.Drawing.Color.Transparent;
-            this.table32.Location = new System.Drawing.Point(237, 367);
+            this.table32.Location = new System.Drawing.Point(291, 367);
             this.table32.Name = "table32";
             this.table32.Size = new System.Drawing.Size(72, 85);
             this.table32.TabIndex = 31;
@@ -431,7 +432,7 @@
             this.table33.FlatAppearance.BorderSize = 0;
             this.table33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table33.ForeColor = System.Drawing.Color.Transparent;
-            this.table33.Location = new System.Drawing.Point(315, 367);
+            this.table33.Location = new System.Drawing.Point(387, 367);
             this.table33.Name = "table33";
             this.table33.Size = new System.Drawing.Size(72, 85);
             this.table33.TabIndex = 30;
@@ -446,7 +447,7 @@
             this.table34.FlatAppearance.BorderSize = 0;
             this.table34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table34.ForeColor = System.Drawing.Color.Transparent;
-            this.table34.Location = new System.Drawing.Point(393, 367);
+            this.table34.Location = new System.Drawing.Point(483, 367);
             this.table34.Name = "table34";
             this.table34.Size = new System.Drawing.Size(72, 85);
             this.table34.TabIndex = 29;
@@ -461,7 +462,7 @@
             this.table21.FlatAppearance.BorderSize = 0;
             this.table21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table21.ForeColor = System.Drawing.Color.Transparent;
-            this.table21.Location = new System.Drawing.Point(471, 185);
+            this.table21.Location = new System.Drawing.Point(579, 185);
             this.table21.Name = "table21";
             this.table21.Size = new System.Drawing.Size(72, 85);
             this.table21.TabIndex = 28;
@@ -491,7 +492,7 @@
             this.table23.FlatAppearance.BorderSize = 0;
             this.table23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table23.ForeColor = System.Drawing.Color.Transparent;
-            this.table23.Location = new System.Drawing.Point(81, 276);
+            this.table23.Location = new System.Drawing.Point(99, 276);
             this.table23.Name = "table23";
             this.table23.Size = new System.Drawing.Size(72, 85);
             this.table23.TabIndex = 26;
@@ -506,7 +507,7 @@
             this.table24.FlatAppearance.BorderSize = 0;
             this.table24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table24.ForeColor = System.Drawing.Color.Transparent;
-            this.table24.Location = new System.Drawing.Point(159, 276);
+            this.table24.Location = new System.Drawing.Point(195, 276);
             this.table24.Name = "table24";
             this.table24.Size = new System.Drawing.Size(72, 85);
             this.table24.TabIndex = 25;
@@ -521,7 +522,7 @@
             this.table25.FlatAppearance.BorderSize = 0;
             this.table25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table25.ForeColor = System.Drawing.Color.Transparent;
-            this.table25.Location = new System.Drawing.Point(237, 276);
+            this.table25.Location = new System.Drawing.Point(291, 276);
             this.table25.Name = "table25";
             this.table25.Size = new System.Drawing.Size(72, 85);
             this.table25.TabIndex = 24;
@@ -536,7 +537,7 @@
             this.table26.FlatAppearance.BorderSize = 0;
             this.table26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table26.ForeColor = System.Drawing.Color.Transparent;
-            this.table26.Location = new System.Drawing.Point(315, 276);
+            this.table26.Location = new System.Drawing.Point(387, 276);
             this.table26.Name = "table26";
             this.table26.Size = new System.Drawing.Size(72, 85);
             this.table26.TabIndex = 23;
@@ -551,7 +552,7 @@
             this.table27.FlatAppearance.BorderSize = 0;
             this.table27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table27.ForeColor = System.Drawing.Color.Transparent;
-            this.table27.Location = new System.Drawing.Point(393, 276);
+            this.table27.Location = new System.Drawing.Point(483, 276);
             this.table27.Name = "table27";
             this.table27.Size = new System.Drawing.Size(72, 85);
             this.table27.TabIndex = 22;
@@ -566,7 +567,7 @@
             this.table14.FlatAppearance.BorderSize = 0;
             this.table14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table14.ForeColor = System.Drawing.Color.Transparent;
-            this.table14.Location = new System.Drawing.Point(471, 94);
+            this.table14.Location = new System.Drawing.Point(579, 94);
             this.table14.Name = "table14";
             this.table14.Size = new System.Drawing.Size(72, 85);
             this.table14.TabIndex = 21;
@@ -596,7 +597,7 @@
             this.table16.FlatAppearance.BorderSize = 0;
             this.table16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table16.ForeColor = System.Drawing.Color.Transparent;
-            this.table16.Location = new System.Drawing.Point(81, 185);
+            this.table16.Location = new System.Drawing.Point(99, 185);
             this.table16.Name = "table16";
             this.table16.Size = new System.Drawing.Size(72, 85);
             this.table16.TabIndex = 19;
@@ -611,7 +612,7 @@
             this.table17.FlatAppearance.BorderSize = 0;
             this.table17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table17.ForeColor = System.Drawing.Color.Transparent;
-            this.table17.Location = new System.Drawing.Point(159, 185);
+            this.table17.Location = new System.Drawing.Point(195, 185);
             this.table17.Name = "table17";
             this.table17.Size = new System.Drawing.Size(72, 85);
             this.table17.TabIndex = 18;
@@ -626,7 +627,7 @@
             this.table18.FlatAppearance.BorderSize = 0;
             this.table18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table18.ForeColor = System.Drawing.Color.Transparent;
-            this.table18.Location = new System.Drawing.Point(237, 185);
+            this.table18.Location = new System.Drawing.Point(291, 185);
             this.table18.Name = "table18";
             this.table18.Size = new System.Drawing.Size(72, 85);
             this.table18.TabIndex = 17;
@@ -641,7 +642,7 @@
             this.table19.FlatAppearance.BorderSize = 0;
             this.table19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table19.ForeColor = System.Drawing.Color.Transparent;
-            this.table19.Location = new System.Drawing.Point(315, 185);
+            this.table19.Location = new System.Drawing.Point(387, 185);
             this.table19.Name = "table19";
             this.table19.Size = new System.Drawing.Size(72, 85);
             this.table19.TabIndex = 16;
@@ -656,7 +657,7 @@
             this.table20.FlatAppearance.BorderSize = 0;
             this.table20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table20.ForeColor = System.Drawing.Color.Transparent;
-            this.table20.Location = new System.Drawing.Point(393, 185);
+            this.table20.Location = new System.Drawing.Point(483, 185);
             this.table20.Name = "table20";
             this.table20.Size = new System.Drawing.Size(72, 85);
             this.table20.TabIndex = 15;
@@ -671,7 +672,7 @@
             this.table7.FlatAppearance.BorderSize = 0;
             this.table7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table7.ForeColor = System.Drawing.Color.Transparent;
-            this.table7.Location = new System.Drawing.Point(471, 3);
+            this.table7.Location = new System.Drawing.Point(579, 3);
             this.table7.Name = "table7";
             this.table7.Size = new System.Drawing.Size(72, 85);
             this.table7.TabIndex = 14;
@@ -701,7 +702,7 @@
             this.table9.FlatAppearance.BorderSize = 0;
             this.table9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table9.ForeColor = System.Drawing.Color.Transparent;
-            this.table9.Location = new System.Drawing.Point(81, 94);
+            this.table9.Location = new System.Drawing.Point(99, 94);
             this.table9.Name = "table9";
             this.table9.Size = new System.Drawing.Size(72, 85);
             this.table9.TabIndex = 12;
@@ -716,7 +717,7 @@
             this.table10.FlatAppearance.BorderSize = 0;
             this.table10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table10.ForeColor = System.Drawing.Color.Transparent;
-            this.table10.Location = new System.Drawing.Point(159, 94);
+            this.table10.Location = new System.Drawing.Point(195, 94);
             this.table10.Name = "table10";
             this.table10.Size = new System.Drawing.Size(72, 85);
             this.table10.TabIndex = 11;
@@ -731,7 +732,7 @@
             this.table11.FlatAppearance.BorderSize = 0;
             this.table11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table11.ForeColor = System.Drawing.Color.Transparent;
-            this.table11.Location = new System.Drawing.Point(237, 94);
+            this.table11.Location = new System.Drawing.Point(291, 94);
             this.table11.Name = "table11";
             this.table11.Size = new System.Drawing.Size(72, 85);
             this.table11.TabIndex = 10;
@@ -746,7 +747,7 @@
             this.table12.FlatAppearance.BorderSize = 0;
             this.table12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table12.ForeColor = System.Drawing.Color.Transparent;
-            this.table12.Location = new System.Drawing.Point(315, 94);
+            this.table12.Location = new System.Drawing.Point(387, 94);
             this.table12.Name = "table12";
             this.table12.Size = new System.Drawing.Size(72, 85);
             this.table12.TabIndex = 9;
@@ -761,7 +762,7 @@
             this.table13.FlatAppearance.BorderSize = 0;
             this.table13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table13.ForeColor = System.Drawing.Color.Transparent;
-            this.table13.Location = new System.Drawing.Point(393, 94);
+            this.table13.Location = new System.Drawing.Point(483, 94);
             this.table13.Name = "table13";
             this.table13.Size = new System.Drawing.Size(72, 85);
             this.table13.TabIndex = 8;
@@ -776,7 +777,7 @@
             this.table42.FlatAppearance.BorderSize = 0;
             this.table42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table42.ForeColor = System.Drawing.Color.Transparent;
-            this.table42.Location = new System.Drawing.Point(471, 458);
+            this.table42.Location = new System.Drawing.Point(579, 458);
             this.table42.Name = "table42";
             this.table42.Size = new System.Drawing.Size(72, 85);
             this.table42.TabIndex = 7;
@@ -791,7 +792,7 @@
             this.table6.FlatAppearance.BorderSize = 0;
             this.table6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table6.ForeColor = System.Drawing.Color.Transparent;
-            this.table6.Location = new System.Drawing.Point(393, 3);
+            this.table6.Location = new System.Drawing.Point(483, 3);
             this.table6.Name = "table6";
             this.table6.Size = new System.Drawing.Size(72, 85);
             this.table6.TabIndex = 6;
@@ -806,7 +807,7 @@
             this.table5.FlatAppearance.BorderSize = 0;
             this.table5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table5.ForeColor = System.Drawing.Color.Transparent;
-            this.table5.Location = new System.Drawing.Point(315, 3);
+            this.table5.Location = new System.Drawing.Point(387, 3);
             this.table5.Name = "table5";
             this.table5.Size = new System.Drawing.Size(72, 85);
             this.table5.TabIndex = 5;
@@ -821,7 +822,7 @@
             this.table4.FlatAppearance.BorderSize = 0;
             this.table4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table4.ForeColor = System.Drawing.Color.Transparent;
-            this.table4.Location = new System.Drawing.Point(237, 3);
+            this.table4.Location = new System.Drawing.Point(291, 3);
             this.table4.Name = "table4";
             this.table4.Size = new System.Drawing.Size(72, 85);
             this.table4.TabIndex = 4;
@@ -836,7 +837,7 @@
             this.table3.FlatAppearance.BorderSize = 0;
             this.table3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table3.ForeColor = System.Drawing.Color.Transparent;
-            this.table3.Location = new System.Drawing.Point(159, 3);
+            this.table3.Location = new System.Drawing.Point(195, 3);
             this.table3.Name = "table3";
             this.table3.Size = new System.Drawing.Size(72, 85);
             this.table3.TabIndex = 3;
@@ -851,7 +852,7 @@
             this.table2.FlatAppearance.BorderSize = 0;
             this.table2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.table2.ForeColor = System.Drawing.Color.Transparent;
-            this.table2.Location = new System.Drawing.Point(81, 3);
+            this.table2.Location = new System.Drawing.Point(99, 3);
             this.table2.Name = "table2";
             this.table2.Size = new System.Drawing.Size(72, 85);
             this.table2.TabIndex = 2;
@@ -888,16 +889,25 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(0, 0);
+            this.panel2.TabIndex = 5;
+            // 
             // OrdersTablePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.Name = "OrdersTablePage";
             this.Size = new System.Drawing.Size(1209, 950);
             this.Load += new System.EventHandler(this.OrdersTablePage_Load);
+            this.Resize += new System.EventHandler(this.OrdersTablePage_Resize);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -956,5 +966,6 @@
         private System.Windows.Forms.Button table44;
         private System.Windows.Forms.Button table43;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel panel2;
     }
 }
