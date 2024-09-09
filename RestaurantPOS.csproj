@@ -114,6 +114,12 @@
     <Compile Include="OrdersTablePage.Designer.cs">
       <DependentUpon>OrdersTablePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManagment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersTablePage.resx">
       <DependentUpon>OrdersTablePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagment.resx">
       <DependentUpon>UserManagment.cs</DependentUpon>

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuManagmentControl));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Category = new System.Windows.Forms.Label();
+            this.Price = new System.Windows.Forms.Label();
+            this.lblProductName = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.ProductName = new System.Windows.Forms.Label();
-            this.Price = new System.Windows.Forms.Label();
-            this.Category = new System.Windows.Forms.Label();
             this.categoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.groupBox1.Controls.Add(this.Category);
             this.groupBox1.Controls.Add(this.Price);
-            this.groupBox1.Controls.Add(this.ProductName);
+            this.groupBox1.Controls.Add(this.lblProductName);
             this.groupBox1.Controls.Add(this.comboBoxCategory);
             this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.btnDeleteProduct);
@@ -68,6 +68,48 @@
             this.groupBox1.Size = new System.Drawing.Size(1151, 762);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // Category
+            // 
+            this.Category.AutoSize = true;
+            this.Category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Category.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Category.ForeColor = System.Drawing.Color.White;
+            this.Category.Location = new System.Drawing.Point(153, 215);
+            this.Category.Name = "Category";
+            this.Category.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Category.Size = new System.Drawing.Size(77, 23);
+            this.Category.TabIndex = 19;
+            this.Category.Text = "Category";
+            this.Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Price
+            // 
+            this.Price.AutoSize = true;
+            this.Price.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Price.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Price.ForeColor = System.Drawing.Color.White;
+            this.Price.Location = new System.Drawing.Point(153, 142);
+            this.Price.Name = "Price";
+            this.Price.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Price.Size = new System.Drawing.Size(48, 23);
+            this.Price.TabIndex = 18;
+            this.Price.Text = "Price";
+            this.Price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblProductName.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.ForeColor = System.Drawing.Color.White;
+            this.lblProductName.Location = new System.Drawing.Point(153, 69);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblProductName.Size = new System.Drawing.Size(117, 23);
+            this.lblProductName.TabIndex = 17;
+            this.lblProductName.Text = "Product Name";
+            this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxCategory
             // 
@@ -186,48 +228,6 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // ProductName
-            // 
-            this.ProductName.AutoSize = true;
-            this.ProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProductName.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductName.ForeColor = System.Drawing.Color.White;
-            this.ProductName.Location = new System.Drawing.Point(153, 69);
-            this.ProductName.Name = "ProductName";
-            this.ProductName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ProductName.Size = new System.Drawing.Size(117, 23);
-            this.ProductName.TabIndex = 17;
-            this.ProductName.Text = "Product Name";
-            this.ProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Price
-            // 
-            this.Price.AutoSize = true;
-            this.Price.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Price.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Price.ForeColor = System.Drawing.Color.White;
-            this.Price.Location = new System.Drawing.Point(153, 142);
-            this.Price.Name = "Price";
-            this.Price.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Price.Size = new System.Drawing.Size(48, 23);
-            this.Price.TabIndex = 18;
-            this.Price.Text = "Price";
-            this.Price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Category
-            // 
-            this.Category.AutoSize = true;
-            this.Category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Category.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Category.ForeColor = System.Drawing.Color.White;
-            this.Category.Location = new System.Drawing.Point(153, 215);
-            this.Category.Name = "Category";
-            this.Category.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Category.Size = new System.Drawing.Size(77, 23);
-            this.Category.TabIndex = 19;
-            this.Category.Text = "Category";
-            this.Category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // categoryBindingSource1
             // 
             this.categoryBindingSource1.DataSource = typeof(RestaurantPOS.Category);
@@ -269,6 +269,6 @@
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private System.Windows.Forms.Label Category;
         private System.Windows.Forms.Label Price;
-        private System.Windows.Forms.Label ProductName;
+        private System.Windows.Forms.Label lblProductName;
     }
 }

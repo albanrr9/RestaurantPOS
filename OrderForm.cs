@@ -106,8 +106,9 @@ namespace RestaurantPOS
         }
         private void btnPrintReceipt_Click(object sender, EventArgs e)
         {
+            SaveOrderToDatabase();
             float totalHeight = CalculateReceiptHeight();
-            PaperSize paperSize = new PaperSize("Custom", 58, (int)totalHeight);
+            PaperSize paperSize = new PaperSize("Thermall", 58, (int)totalHeight);
             printDocument1.DefaultPageSettings.PaperSize = paperSize;
             Margins margins = new Margins(8, 8, 8, 8);
             printDocument1.DefaultPageSettings.Margins = margins;
@@ -328,6 +329,59 @@ namespace RestaurantPOS
         {
             string query = "SELECT ProductID, ProductName, Price FROM Products where CategoryID = 12";
             LoadProducts(query);
+        }
+        private void SaveOrderToDatabase()
+        {
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                using (SqlCommand orderCommand = new SqlCommand(
+                    "INSERT INTO Orders (TableNumber, TotalPrice, Username, OrderDate) VALUES (@TableNumber, @TotalPrice, @Username, @OrderDate); SELECT SCOPE_IDENTITY();", connection))
+                {
+                    orderCommand.Parameters.AddWithValue("@TableNumber", tableNumber);
+                    orderCommand.Parameters.AddWithValue("@TotalPrice", totalOrderCost);
+                    orderCommand.Parameters.AddWithValue("@Username", userName);
+                    orderCommand.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                    int orderId = Convert.ToInt32(orderCommand.ExecuteScalar());
+                    if (orderId > 0)
+                    {
+                        foreach (ListViewItem item in listViewOrder.Items)
+                        {
+                            string productName = item.SubItems[0].Text;
+                            int quantity = int.Parse(item.SubItems[1].Text);
+                            decimal unitPrice = decimal.Parse(item.SubItems[2].Text);
+                            decimal subtotal = decimal.Parse(item.SubItems[3].Text);
+                            using (SqlCommand itemCommand = new SqlCommand(
+                                "INSERT INTO OrderItems (OrderID, ProductID, Quantity, UnitPrice, Subtotal) VALUES (@OrderID, @ProductID, @Quantity, @UnitPrice, @Subtotal)", connection))
+                            {
+                                itemCommand.Parameters.AddWithValue("@OrderID", orderId);
+                                itemCommand.Parameters.AddWithValue("@ProductID", GetProductIdByName(productName));
+                                itemCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                itemCommand.Parameters.AddWithValue("@UnitPrice", unitPrice);
+                                itemCommand.Parameters.AddWithValue("@Subtotal", subtotal);
+                                itemCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to retrieve OrderID.");
+                    }
+                }
+            }
+        }
+        private int GetProductIdByName(string productName)
+        {
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+                string query = "SELECT ProductID FROM Products WHERE ProductName = @ProductName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductName", productName);
+                    return (int)command.ExecuteScalar();
+                }
+            }
         }
     }
 }

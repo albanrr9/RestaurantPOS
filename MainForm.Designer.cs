@@ -31,8 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.buttons = new System.Windows.Forms.Panel();
             this.btnUser = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnMenuManagment = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,14 +42,13 @@
             // 
             this.buttons.BackColor = System.Drawing.Color.Transparent;
             this.buttons.Controls.Add(this.btnUser);
-            this.buttons.Controls.Add(this.button4);
-            this.buttons.Controls.Add(this.button3);
+            this.buttons.Controls.Add(this.btnReports);
             this.buttons.Controls.Add(this.btnMenuManagment);
             this.buttons.Controls.Add(this.btnOrders);
-            this.buttons.Location = new System.Drawing.Point(132, 35);
+            this.buttons.Location = new System.Drawing.Point(132, 88);
             this.buttons.Margin = new System.Windows.Forms.Padding(4);
             this.buttons.Name = "buttons";
-            this.buttons.Size = new System.Drawing.Size(310, 290);
+            this.buttons.Size = new System.Drawing.Size(310, 188);
             this.buttons.TabIndex = 5;
             // 
             // btnUser
@@ -60,50 +58,33 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Artifakt Element Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-            this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUser.Location = new System.Drawing.Point(0, 200);
+            this.btnUser.Location = new System.Drawing.Point(158, 98);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(310, 90);
+            this.btnUser.Size = new System.Drawing.Size(152, 90);
             this.btnUser.TabIndex = 4;
             this.btnUser.Text = "User Managments";
-            this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
-            // button4
+            // btnReports
             // 
-            this.button4.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Artifakt Element Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(160, 100);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 90);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Reports";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Artifakt Element Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 100);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 90);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Inventory Managments";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnReports.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btnReports.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Artifakt Element Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
+            this.btnReports.Location = new System.Drawing.Point(0, 98);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(150, 90);
+            this.btnReports.TabIndex = 3;
+            this.btnReports.Text = "Reports";
+            this.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnMenuManagment
             // 
@@ -179,8 +160,7 @@
 
         private System.Windows.Forms.Panel buttons;
         private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnMenuManagment;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Panel panel1;
