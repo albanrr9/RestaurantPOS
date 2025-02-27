@@ -1,24 +1,28 @@
 # Restaurant Point-of-Sale (POS) System 🍽️
 
-A modern, lightweight POS system designed for restaurants to manage orders, track transactions, and streamline operations. Built with Node.js, Express, and MySQL.
+A Windows-based POS system for restaurant management, built with C# Windows Forms and SQL Server. Features order processing, inventory management, and sales reporting.
 
-![POS Demo]([https://via.placeholder.com/800x400.png?text=Add+Screenshot+Here](https://github.com/albanrr9/RestaurantPOS/blob/master/Screenshot%202025-02-27%20131233.png?raw=true))
+![POS System Interface](https://raw.githubusercontent.com/albanrr9/RestaurantPOS/master/Screenshot%202025-02-27%20131233.png)
 
 ## Features ✨
-- **Menu Management**: Add, edit, or remove menu items dynamically.
-- **Order Processing**: Create and manage orders with real-time calculations.
-- **Transaction History**: Track completed orders and payments.
-- **User-Friendly Interface**: Simple UI for waitstaff and managers.
-- **Database Integration**: Securely stores menu items, orders, and transactions.
+- **Order Management**: Intuitive table-based order creation
+- **Real-time Calculations**: Automatic total price updates
+- **Menu Categories**: Organized food/drink sections (Burgers, Pizza, etc.)
+- **Quantity Controls**: +/- buttons for item adjustments
+- **Receipt Preview**: Order summary before printing
 
 ## Technologies 🛠️
-![Node.js](https://img.shields.io/badge/Node.js-18-green)
-![Express](https://img.shields.io/badge/Express-4.17-blue)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-orange)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
+![C#](https://img.shields.io/badge/C%23-10.0-blueviolet)
+![Windows Forms](https://img.shields.io/badge/Windows_Forms-.NET%204.8-blue)
+![SQL Server](https://img.shields.io/badge/SQL_Server-2019-orange)
+![Entity Framework](https://img.shields.io/badge/Entity_Framework-6.4-green)
+
+## Prerequisites 📋
+- .NET Framework 4.8
+- SQL Server 2019+
+- Windows 10/11
 
 ## Installation 💻
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/albanrr9/RestaurantPOS.git
-   cd RestaurantPOS
